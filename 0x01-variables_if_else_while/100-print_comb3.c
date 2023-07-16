@@ -7,23 +7,34 @@
 
 int main(void)
 {
-	int tens;
-	int ones;
+	int i, j;
+	int count = 0;
 
-	for (tens = '0'; tens <= '9'; tens++) /*print tens place*/
-	{
-		for (ones = '0'; ones <= '9'; ones++) /*print ones place*/
-		{
-			putchar(tens);
-			putchar(ones);
-			if (!(tens == '9' && ones == '9')) /*skip comma at end*/
-			{
-				putchar(',');
-				putchar(' ');
-			}
-		}
-	}
-	putchar('\n');
+    for (i = 0; i <= 9; i++) {
+        for (j = i + 1; j <= 9; j++) {
+            if (count > 0) {
+                putchar(',');
+                putchar(' ');
+                count += 2;
+            }
+
+            if (i == 0) {
+                putchar('0');
+                count++;
+            } else {
+                putchar(i + '0');
+                count++;
+            }
+
+            putchar(j + '0');
+            count++;
+            
+            if (count >= 60) {
+                putchar('\n');
+                count = 0;
+            }
+        }
+    }
 
 	return (0);
 }
