@@ -2,11 +2,12 @@
 
 /**
  * main - Entry point
- * Write a program that prints all single digit numbers of base 10 starting from 0, followed by a new line.
+ * Write a program that prints all single digit numbers of base
+ * 10 starting from 0, followed by a new line.
  * Return: Always 0 (SUCCESS)
  **/
 
-int mian(void)
+int main(void)
 {
 	int numb;
 
