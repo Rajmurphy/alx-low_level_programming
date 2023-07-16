@@ -5,16 +5,16 @@
  * main - Entry point
  * Return: Always 0 (SUCCESS)
  **/
-
-int main(void) 
+int main(void)
 {
-       char alpha;
+	char alpha = 'a';
 
-           for (alpha = 'a'; alpha <= 'z'; alpha ++) {
-              putchar(alpha);
-           }
+	while (alpha <= 'z')
+	{
+		putchar(alpha);
+		alpha++;
+	}
+	putchar('\n');
 
-	   putchar('/n');
-	   
-           return (0);
-}              
+	return (0);
+}
