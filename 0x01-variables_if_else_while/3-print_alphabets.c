@@ -7,19 +7,18 @@
  **/
 int main(void)
 {
-    char small, big;
+	char small, big;
 
 	for (small = 'a'; small <= 'z'; small++)
-    {
-        putchar(small);
-    }
+	{
+		putchar(small);
+	}
 
-    for (big = 'A'; big <= 'Z'; big++)
-    {
-        putchar(big);
-    }
-
-    putchar('\n');
-
-    return (0);
+	for (big = 'A'; big <= 'Z'; big++)
+	{
+		putchar(big);
+	}
+	
+	putchar('\n');
+	return (0);
 }
