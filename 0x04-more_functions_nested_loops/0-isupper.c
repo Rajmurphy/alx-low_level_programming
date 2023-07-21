@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * int _isupper -Return 1 if c is a upper letter
+ * _isupper -Return 1 iif c is a upper letter
  * @c: the int to print
  * Return: Always 0.
  */
