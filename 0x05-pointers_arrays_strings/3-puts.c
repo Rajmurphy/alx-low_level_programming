@@ -1,18 +1,19 @@
 #include "main.h"
 
 /**
- * _puts - print to standard inpt output
- * @str param
+ * _puts - pusts to stdout
+ * @str: param
  */
 
 void _puts(char *str)
 {
-	int p = 0;
+		int i = 0;
 
-	while (str[p] != 0)
-	{
-		p++;
-		_putchar(str[p]);
-	}
-	_putchar('\n');
+		while (str[i] != '\0')
+		{
+			_putchar(str[i]);
+			i++;
+		}
+
+		_putchar('\n');
 }
