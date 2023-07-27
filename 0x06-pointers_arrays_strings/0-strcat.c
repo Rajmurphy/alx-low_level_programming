@@ -4,6 +4,7 @@
  * _strcat - concatenation
  * @dest: param
  * @src: param;
+ * Return: dest
  */
 
 char *_strcat(char *dest, char *src)
@@ -20,5 +21,5 @@ char *_strcat(char *dest, char *src)
 		j++;
 	}
 
-	return(dest);
+	return (dest);
 }
