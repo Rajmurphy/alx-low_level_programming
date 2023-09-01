@@ -1,10 +1,11 @@
 #include "main.h"
 
-/*
- * prime - finds prime numbers
- * @num: number to check whether it is prime number
- * @i: divisor
- */
+/**
+  * prime - finds prime numbers
+  * @num: number to check whether it is a prime number
+  * @i: divisor
+  * Return: prime
+  */
 int prime(int num, int i)
 {
 	if (num % i == 0)
@@ -14,12 +15,11 @@ int prime(int num, int i)
 	return (prime(num, i + 1));
 }
 
-/*
- * is_prime_number - determine if a number is a prime number
- * @n: parameter
- * Return: 0 if false
- * Return: 1 if true
- */
+/**
+  * is_prime_number - determine if a number is a prime number
+  * @n: int number
+  * Return: 1 if prime, 0 otherwise
+  */
 int is_prime_number(int n)
 {
 	int i = 2;
