@@ -1,14 +1,16 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
- * main - adds positive numbers
- * @argc: argumnent counter
- * @argv: argumnet vector
- * Return 0 when no number is passed
- * Return 1 when number contains symbols that are not digits
- */
+  * main - adds positive numbers and prints result
+  * @argc: argument count
+  * @argv: argument array vector
+  * Description: If no number is passed, print 0
+  * If one of the arguments containd non-digits, print error.
+  *
+  *Return: 1 if error and 0 if function runs properly
+  */
+
 int main(int argc, char *argv[])
 {
 	int i, num, sum = 0;

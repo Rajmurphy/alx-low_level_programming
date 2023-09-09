@@ -3,11 +3,12 @@
 #include <stdlib.h>
 
 /**
- * main - convert and multiply 2 strings
- * @argc: argument counter
- * @argv: argument vector(array of strings)
- * Return 0 if pass and 1 if argument passed isn't 3
- */
+  * main - multiply two numbers passed to main
+  * @argc: argument count
+  * @argv: argument vector
+  * Return: 1 if error, 0 if function runs correctly
+  */
+
 int main(int argc, char *argv[])
 {
 	(void) argc;
