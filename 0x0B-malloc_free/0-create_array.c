@@ -18,11 +18,11 @@ char *create_array(unsigned int size, char c)
 	if (size == 0)
 		return (NULL);
 	ptarr = malloc(sizeof(char) * size);
+	if (ptarr == NULL)
+		return (NULL);
 	for (i = 0; i < size; i++)
 	{
 		ptarr[i] = c;
 	}
-	if (ptarr == NULL)
-		return (NULL);
 return (ptarr);
 }
