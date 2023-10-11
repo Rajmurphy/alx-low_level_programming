@@ -2,17 +2,16 @@
 #define DOG_H
 
 /**
- * struct my_struct - Short description
+ * struct dog - a struct for a dog
  * @name: First member
  * @age: Second member
  * @owner: Third member
- *
  * Description: a new type struct dog with the following elements
  */
 
 struct dog
 {
-	char * name;
+	char *name;
 	float age;
 	char *owner;
 };
