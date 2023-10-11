@@ -1,50 +1,79 @@
-#include <stdarg.h>
 #include "variadic_functions.h"
+#include <stdlib.h>
 #include <stdio.h>
 
 /**
- * print_all - a function tat print anything
- * @format: is a list of all type of argument passed to the function
- * c: char
- * i: integer
- * f: float
- * s: char * 
- * if the string is NULL, print (nil) instead
- * any other char should be ignored
- * Return: nothing
- */
+  * _printchar - prints char type element from va_list
+  * @list: va_list passed to function
+  */
+void _printchar(va_list list)
+{
+	printf("%c", va_arg(list, int));
+}
 
+/**
+  * _printstr - prints string element from va_list
+  * @list: va_list passed to function
+  */
+void _printstr(va_list list)
+{
+	char *s;
+
+	s = va_arg(list, char *);
+	if (s == NULL)
+		s = "(nil)";
+	printf("%s", s);
+}
+
+/**
+  * _printfloat - prints float type element from va_list
+  * @list: va_list passed to function
+  */
+void _printfloat(va_list list)
+{
+	printf("%f", va_arg(list, double));
+}
+
+/**
+  * _printint - prints int type element from va_list
+  * @list: va_list passed to function
+  */
+void _printint(va_list list)
+{
+	printf("%d", va_arg(list, int));
+}
+
+/**
+  * print_all - prints anything passed if char, int, float, or string.
+  * @format: string of formats to use and print
+  */
 void print_all(const char * const format, ...)
 {
-	char format_c[strlen(format) + 1]; strcpy(format_c, format);
-	va_list par;
-	char c;
-	int i;
-	float f;
-	char *s;
-	va_start(par, format);
-	while (format){
-		if (format_c == 'c'){
-			c = (char)va_arg(par, int);
-			printf("%c", c);
+	unsigned int i, j;
+	va_list args;
+	char *sep;
+
+	checker storage[] = {
+		{ "c", _printchar },
+		{ "f", _printfloat },
+		{ "s", _printstr },
+		{ "i", _printint }
+	};
+
+	i = 0;
+	sep = "";
+	va_start(args, format);
+	while (format != NULL && format[i / 4] != '\0')
+	{
+		j = i % 4;
+		if (storage[j].type[0] == format[i / 4])
+		{
+			printf("%s", sep);
+			storage[j].f(args);
+			sep = ", ";
 		}
-		else if (format_c == '1'){
-			i = va_arg(par, int);
-			printf("%d", i);
-		}
-		else if (format_c == 'f'){
-			f = (float)va_arg(par, double);
-			printf("%f", f);
-		}
-		else if (format_c == 's'){
-			s = va_arg(par, char*);
-			if (s == NULL)
-				printf("nil");
-			else
-				printf("%s", s);
-		}
-		format_c++;
+		i++;
 	}
-		va_end(par);
-		printf("\n");
+	printf("\n");
+	va_end(args);
 }
